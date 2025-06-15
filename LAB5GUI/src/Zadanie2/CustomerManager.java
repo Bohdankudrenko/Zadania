@@ -3,7 +3,6 @@ package Zadanie2;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.*;
 
 public class CustomerManager extends JFrame {
     private JTextField nameField, emailField, phoneField;
@@ -17,7 +16,6 @@ public class CustomerManager extends JFrame {
         setSize(600, 400);
         setLocationRelativeTo(null);
 
-        // Panel formularza
         JPanel formPanel = new JPanel(new GridLayout(4, 2, 10, 10));
         formPanel.setBorder(BorderFactory.createTitledBorder("Add New Customer"));
 
@@ -38,29 +36,23 @@ public class CustomerManager extends JFrame {
         formPanel.add(addButton);
         formPanel.add(clearButton);
 
-        // Tabela klientów
         tableModel = new DefaultTableModel(new String[]{"Name", "Email", "Phone"}, 0);
         customerTable = new JTable(tableModel);
         JScrollPane tableScroll = new JScrollPane(customerTable);
 
-        // Przycisk usuwania
         deleteButton = new JButton("Delete Selected");
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         bottomPanel.add(deleteButton);
 
-        // Layout główny
         setLayout(new BorderLayout(10, 10));
         add(formPanel, BorderLayout.NORTH);
         add(tableScroll, BorderLayout.CENTER);
         add(bottomPanel, BorderLayout.SOUTH);
 
-        // Obsługa przycisku "Add"
         addButton.addActionListener(e -> addCustomer());
 
-        // Obsługa przycisku "Clear"
         clearButton.addActionListener(e -> clearFields());
 
-        // Obsługa przycisku "Delete"
         deleteButton.addActionListener(e -> deleteSelectedCustomer());
     }
 
