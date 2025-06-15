@@ -1,9 +1,7 @@
 package Zadanie1;
 
 import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -26,14 +24,12 @@ public class ContactsApp {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        // Lista kontaktów
         listModel = new DefaultListModel<>();
         contactList = new JList<>(listModel);
         contactList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane listScrollPane = new JScrollPane(contactList);
         listScrollPane.setPreferredSize(new Dimension(180, 0));
 
-        // Formularz
         JPanel formPanel = new JPanel(new GridLayout(8, 2, 5, 5));
         JLabel title = new JLabel("Contacts Project");
         title.setFont(new Font("Arial", Font.BOLD, 20));
@@ -72,7 +68,6 @@ public class ContactsApp {
         frame.add(listScrollPane, BorderLayout.WEST);
         frame.add(rightPanel, BorderLayout.CENTER);
 
-        // Obsługa zdarzeń
         contactList.addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
                 selectedContact = contactList.getSelectedValue();
@@ -125,10 +120,8 @@ public class ContactsApp {
             }
         });
 
-        // Dane przykładowe
         addSampleData();
 
-        // Pokaż okno
         frame.setVisible(true);
     }
 
