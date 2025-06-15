@@ -2,7 +2,6 @@ package Zadanie2;
 
 import java.util.Scanner;
 
-// Własny wyjątek typu checked
 class BlednaWartoscDlaSilniException extends Exception {
     public BlednaWartoscDlaSilniException(String message) {
         super(message);
@@ -11,7 +10,6 @@ class BlednaWartoscDlaSilniException extends Exception {
 
 public class Silnia {
 
-    // Metoda do obliczania silni
     public static long obliczSilnie(int n) throws BlednaWartoscDlaSilniException {
         if (n < 0) {
             throw new BlednaWartoscDlaSilniException("Nie można obliczyć silni z liczby ujemnej.");

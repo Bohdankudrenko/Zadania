@@ -7,10 +7,10 @@ public class Pierwiastek {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Podaj liczbę: ");
-        String input = scanner.nextLine(); // Pobieramy dane jako tekst
+        String input = scanner.nextLine();
 
         try {
-            double liczba = Double.parseDouble(input); // Konwertujemy na double
+            double liczba = Double.parseDouble(input);
 
             if (liczba < 0) {
                 throw new IllegalArgumentException("Nie można obliczyć pierwiastka z liczby ujemnej.");

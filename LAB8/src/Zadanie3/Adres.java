@@ -1,13 +1,11 @@
 package Zadanie3;
 
-// Własny wyjątek typu checked
 class NieprawidlowyAdresException extends Exception {
     public NieprawidlowyAdresException(String message) {
         super(message);
     }
 }
 
-// Klasa Adres
 public class Adres {
     private String ulica;
     private int numerDomu;
@@ -36,22 +34,18 @@ public class Adres {
             throw new NieprawidlowyAdresException(blad.toString().trim());
         }
 
-        // Wszystko poprawne – przypisujemy pola
         this.ulica = ulica;
         this.numerDomu = numerDomu;
         this.kodPocztowy = kodPocztowy;
         this.miasto = miasto;
     }
 
-    // Prosta metoda do wyświetlenia adresu
     public void wypiszAdres() {
         System.out.println(ulica + " " + numerDomu + ", " + kodPocztowy + " " + miasto);
     }
 
-    // main do testowania
     public static void main(String[] args) {
         try {
-            // Przykład z błędem
             Adres adres = new Adres(null, -5, null, null);
             adres.wypiszAdres();
         } catch (NieprawidlowyAdresException e) {
@@ -59,7 +53,6 @@ public class Adres {
         }
 
         try {
-            // Przykład poprawny
             Adres poprawnyAdres = new Adres("Szkolna", 12, "00-001", "Warszawa");
             poprawnyAdres.wypiszAdres();
         } catch (NieprawidlowyAdresException e) {
