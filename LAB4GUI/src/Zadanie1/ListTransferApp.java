@@ -2,9 +2,6 @@ package Zadanie1;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Vector;
 
 public class ListTransferApp extends JFrame {
 
@@ -18,11 +15,9 @@ public class ListTransferApp extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Tworzenie modeli list
         model1 = new DefaultListModel<>();
         model2 = new DefaultListModel<>();
 
-        // Przykładowe dane
         model1.addElement("Java");
         model1.addElement("Python");
         model1.addElement("C++");
@@ -31,31 +26,26 @@ public class ListTransferApp extends JFrame {
         list1 = new JList<>(model1);
         list2 = new JList<>(model2);
 
-        // Komponenty przycisków
         btn1 = new JButton(">");
         btnAll1 = new JButton(">>");
         btn2 = new JButton("<");
         btnAll2 = new JButton("<<");
 
-        // Panel list
         JPanel listPanel = new JPanel(new GridLayout(1, 2, 10, 10));
         listPanel.add(new JScrollPane(list1));
         listPanel.add(new JScrollPane(list2));
 
-        // Panel przycisków
         JPanel buttonPanel = new JPanel(new GridLayout(4, 1, 5, 5));
         buttonPanel.add(btn1);
         buttonPanel.add(btnAll1);
         buttonPanel.add(btn2);
         buttonPanel.add(btnAll2);
 
-        // Layout główny
         setLayout(new BorderLayout(10, 10));
         add(new JLabel("  Lista 1:"), BorderLayout.WEST);
         add(listPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.EAST);
 
-        // Obsługa przycisków
         btn1.addActionListener(e -> moveSelectedItem(model1, list1, model2));
         btn2.addActionListener(e -> moveSelectedItem(model2, list2, model1));
 

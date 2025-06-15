@@ -2,8 +2,6 @@ package Zadanie2;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TextEditorApp extends JFrame {
 
@@ -20,19 +18,16 @@ public class TextEditorApp extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Edytor tekstu
         textArea = new JTextArea();
         textArea.setBackground(Color.LIGHT_GRAY); // domyślny kolor tła
         textArea.setForeground(Color.BLACK);      // domyślny kolor tekstu
         textArea.setFont(new Font("Arial", Font.PLAIN, fontSize));
         JScrollPane scrollPane = new JScrollPane(textArea);
 
-        // Lista kolorów
         String[] colors = {"Czarny", "Czerwony", "Zielony", "Niebieski", "Pomarańczowy", "Różowy"};
         colorCombo = new JComboBox<>(colors);
         colorCombo.addActionListener(e -> changeTextColor());
 
-        // Przyciski formatowania
         boldButton = new JButton("B");
         italicButton = new JButton("I");
         decreaseButton = new JButton("Z");
@@ -43,12 +38,10 @@ public class TextEditorApp extends JFrame {
         decreaseButton.addActionListener(e -> changeFontSize(-1));
         increaseButton.addActionListener(e -> changeFontSize(1));
 
-        // Panel górny (lista kolorów)
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         topPanel.add(new JLabel("Kolor tekstu:"));
         topPanel.add(colorCombo);
 
-        // Panel dolny (przyciski)
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         bottomPanel.add(new JLabel("Styl:"));
         bottomPanel.add(boldButton);
@@ -56,7 +49,6 @@ public class TextEditorApp extends JFrame {
         bottomPanel.add(decreaseButton);
         bottomPanel.add(increaseButton);
 
-        // Rozkład
         setLayout(new BorderLayout());
         add(topPanel, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
