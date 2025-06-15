@@ -55,7 +55,6 @@ public class PeselAnalyzerNew {
         System.out.println("Średni wiek 1981-2000: " + averageAge(group2));
         System.out.println("Średni wiek 2001-2025: " + averageAge(group3));
 
-        // Zapis do pliku
         List<String> birthDates = new ArrayList<>();
         for (Pesel p : pesels) {
             birthDates.add(p.getFormattedBirthDate());

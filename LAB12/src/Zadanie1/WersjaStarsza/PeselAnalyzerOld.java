@@ -29,7 +29,6 @@ public class PeselAnalyzerOld {
             return;
         }
 
-        // Analiza
         int womenCount = 0, menCount = 0;
         List<Pesel> group1 = new ArrayList<>();
         List<Pesel> group2 = new ArrayList<>();
@@ -55,7 +54,6 @@ public class PeselAnalyzerOld {
         System.out.println("Średni wiek 1981-2000: " + averageAge(group2));
         System.out.println("Średni wiek 2001-2025: " + averageAge(group3));
 
-        // Zapis dat urodzenia do pliku
         try (FileWriter writer = new FileWriter(outputFile)) {
             for (Pesel p : pesels) {
                 writer.write(p.getFormattedBirthDate() + "\n");

@@ -20,7 +20,6 @@ public class Pesel {
         int month = Integer.parseInt(pesel.substring(2, 4));
         int day = Integer.parseInt(pesel.substring(4, 6));
 
-        // Korygowanie miesiąca dla osób urodzonych po 1999 i kolejnych latach
         if (month > 80) {
             year += 1800;
             month -= 80;
