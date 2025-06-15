@@ -4,7 +4,6 @@ public class Zadanie6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Wyświetlanie menu
         System.out.println("Wybierz działanie:");
         System.out.println("1. Dodawanie");
         System.out.println("2. Odejmowanie");
@@ -30,7 +29,6 @@ public class Zadanie6 {
         System.out.print("Podaj drugą liczbę: ");
         double liczba2 = scanner.nextDouble();
 
-        // Wykonywanie wybranego działania
         switch (wybor) {
             case 1:
                 double suma = liczba1 + liczba2;
