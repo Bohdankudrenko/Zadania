@@ -73,7 +73,7 @@ public class Main {
             System.out.println("2. Dodaj nowego uztkownika");
         }
     }
-    
+
     private static void printBanner(String title){
         System.out.println("\n" + "=".repeat(40));
         System.out.print(" "+ title);
