@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
-    // Metoda zwracająca listę niepełnoletnich uczestników
     public static List<Uczestnik> filtrujNiepelnoletnich(List<Uczestnik> uczestnicy) {
         List<Uczestnik> niepelnoletni = new ArrayList<>();
         for (Uczestnik u : uczestnicy) {
@@ -17,7 +16,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // Przykład z ArrayList
         List<Uczestnik> listaArray = new ArrayList<>();
         listaArray.add(new Uczestnik(1, "Jan", 20));
         listaArray.add(new Uczestnik(2, "Ola", 17));
@@ -34,7 +32,6 @@ public class Main {
             System.out.println(u);
         }
 
-        // Przykład z LinkedList
         List<Uczestnik> listaLinked = new LinkedList<>();
         listaLinked.add(new Uczestnik(4, "Ewa", 25));
         listaLinked.add(new Uczestnik(5, "Michał", 15));

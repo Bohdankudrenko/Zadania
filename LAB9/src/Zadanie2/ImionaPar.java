@@ -19,7 +19,6 @@ public class ImionaPar {
             System.out.print("Podaj imię partnera/partnerki dla " + imie1 + ": ");
             String imie2 = scanner.nextLine().trim();
 
-            // Dodajemy parę w obie strony
             pary.put(imie1, imie2);
             pary.put(imie2, imie1);
         }
