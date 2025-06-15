@@ -5,22 +5,18 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class DemoSwingComponents extends JFrame implements ActionListener {
-    // JTextArea + przyciski font
     private JTextArea textArea;
     private JButton btnBold, btnItalic, btnPlain, btnInsert, btnAppend, btnSetRowsCols;
 
-    // JPasswordField + info
     private JPasswordField passwordField;
     private JButton btnCheckPassword;
     private JLabel passwordInfoLabel;
 
-    // JRadioButton - systemy
     private JRadioButton rbWindows, rbLinux, rbMac;
     private ButtonGroup systemGroup;
     private JLabel systemLabel;
     private JButton btnShowSystem;
 
-    // JCheckBox - kursy
     private JCheckBox cbJava, cbPython, cbWeb;
     private JButton btnShowPrice;
 
@@ -28,7 +24,6 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
         super("Demo Swing Components");
         setLayout(new BorderLayout());
 
-        // PANEL TEXT AREA + CONTROLS
         JPanel panelTextArea = new JPanel(new BorderLayout());
         textArea = new JTextArea("Please write something...", 5, 20);
         textArea.setFont(new Font("Serif", Font.PLAIN, 14));
@@ -58,7 +53,6 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
 
         panelTextArea.add(panelTextButtons, BorderLayout.SOUTH);
 
-        // PANEL PASSWORD
         JPanel panelPassword = new JPanel(new FlowLayout(FlowLayout.LEFT));
         panelPassword.setBorder(BorderFactory.createTitledBorder("Password Field Demo"));
         panelPassword.add(new JLabel("Password:"));
@@ -70,7 +64,6 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
         passwordInfoLabel = new JLabel("Length: 0");
         panelPassword.add(passwordInfoLabel);
 
-        // PANEL RADIO BUTTONS (Systemy)
         JPanel panelRadio = new JPanel(new FlowLayout(FlowLayout.LEFT));
         panelRadio.setBorder(BorderFactory.createTitledBorder("Select System"));
         rbWindows = new JRadioButton("Windows");
@@ -89,7 +82,6 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
         systemLabel = new JLabel("Selected: None");
         panelRadio.add(systemLabel);
 
-        // PANEL CHECKBOX (Kursy)
         JPanel panelCheckbox = new JPanel(new FlowLayout(FlowLayout.LEFT));
         panelCheckbox.setBorder(BorderFactory.createTitledBorder("Select Courses"));
         cbJava = new JCheckBox("Java ($100)");
@@ -102,7 +94,6 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
         btnShowPrice.addActionListener(this);
         panelCheckbox.add(btnShowPrice);
 
-        // POŁĄCZENIE PANELI
         JPanel panelTop = new JPanel(new GridLayout(3, 1));
         panelTop.add(panelPassword);
         panelTop.add(panelRadio);
@@ -121,7 +112,6 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
 
-        // JTextArea - zmiana fontu
         if (src == btnBold) {
             textArea.setFont(new Font("Serif", Font.BOLD, 14));
         } else if (src == btnItalic) {
@@ -129,23 +119,20 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
         } else if (src == btnPlain) {
             textArea.setFont(new Font("Serif", Font.PLAIN, 14));
         } else if (src == btnInsert) {
-            textArea.insert("[INSERTED TEXT]", 0);  // wstaw na początek
+            textArea.insert("[INSERTED TEXT]", 0);
         } else if (src == btnAppend) {
             textArea.append(" [APPENDED TEXT]");
         } else if (src == btnSetRowsCols) {
             textArea.setRows(10);
             textArea.setColumns(30);
-            // Odśwież layout by zmiany były widoczne:
             textArea.revalidate();
         }
 
-        // JPasswordField - długość hasła
         else if (src == btnCheckPassword) {
             int length = passwordField.getPassword().length;
             passwordInfoLabel.setText("Length: " + length);
         }
 
-        // JRadioButton - pokazanie wybranego systemu
         else if (src == btnShowSystem) {
             if (rbWindows.isSelected()) {
                 systemLabel.setText("Selected: Windows");
@@ -158,7 +145,6 @@ public class DemoSwingComponents extends JFrame implements ActionListener {
             }
         }
 
-        // JCheckBox - sumaryczna cena kursów
         else if (src == btnShowPrice) {
             int price = 0;
             StringBuilder courses = new StringBuilder("Courses selected: ");

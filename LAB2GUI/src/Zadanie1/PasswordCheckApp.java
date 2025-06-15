@@ -12,10 +12,8 @@ public class PasswordCheckApp extends JFrame implements ActionListener {
     public PasswordCheckApp() {
         super("Password Checker");
 
-        // Ustaw layout
         setLayout(new GridLayout(4, 2, 10, 10));
 
-        // Etykiety i pola do wpisywania haseł
         add(new JLabel("Enter password:"));
         passwordField1 = new JPasswordField(15);
         add(passwordField1);
@@ -24,12 +22,10 @@ public class PasswordCheckApp extends JFrame implements ActionListener {
         passwordField2 = new JPasswordField(15);
         add(passwordField2);
 
-        // Przycisk OK
         okButton = new JButton("OK");
         okButton.addActionListener(this);
         add(okButton);
 
-        // Ustawienia okna
         setSize(300, 150);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -38,7 +34,6 @@ public class PasswordCheckApp extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Pobierz wpisane hasła
         String pass1 = new String(passwordField1.getPassword());
         String pass2 = new String(passwordField2.getPassword());
 
