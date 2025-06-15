@@ -4,7 +4,6 @@ package Zadanie1.Inheritance;
 
 public class Figura {
 
-    //pola metody i kontruktory
     public Punkt punkt;
     protected String kolor = "bialy";
 

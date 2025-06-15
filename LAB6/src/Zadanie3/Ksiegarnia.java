@@ -19,7 +19,6 @@ public class Ksiegarnia {
         for (Ksiazka ks : ksiazki) {
             ks.wypiszInfo();
 
-            // RZUTOWANIE i instanceof
             if (ks instanceof Podrecznik) {
                 Podrecznik p = (Podrecznik) ks;
                 System.out.println("-> To jest podręcznik.");
