@@ -11,7 +11,6 @@ public class Zadanie3 {
         System.out.print("Podaj liczbę elementów ciągu (n): ");
         int n = scanner.nextInt();
 
-        // Sprawdzamy czy n jest dodatnie
         if (n <= 0) {
             System.out.println("Liczba elementów musi być większa od 0!");
             return;
@@ -19,7 +18,6 @@ public class Zadanie3 {
 
         int sumaParzystych = 0;
 
-        // Pobieramy n liczb i sumujemy parzyste
         for (int i = 1; i <= n; i++) {
             System.out.print("Podaj liczbę #" + i + ": ");
             int liczba = scanner.nextInt();

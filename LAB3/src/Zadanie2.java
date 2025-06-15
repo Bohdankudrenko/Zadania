@@ -11,12 +11,10 @@ public class Zadanie2 {
 
         System.out.println("Podaj 10 liczb:");
 
-        // Pętla wczytująca 10 liczb
         for (int i = 1; i <= 10; i++) {
             System.out.print("Liczba " + i + ": ");
             double liczba = scanner.nextDouble();
 
-            // Sprawdzanie czy liczba jest dodatnia czy ujemna
             if (liczba > 0) {
                 iloscDodatnich++;
                 sumaDodatnich += liczba;
@@ -26,7 +24,6 @@ public class Zadanie2 {
             }
         }
 
-        // Wyświetlanie wyników
         System.out.println("\nWyniki:");
         System.out.println("Liczb dodatnich: " + iloscDodatnich);
         System.out.println("Suma liczb dodatnich: " + sumaDodatnich);
