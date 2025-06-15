@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 public class UsersCRUD {
 
-    //Uwierzytelnianie użytkownika
     public boolean authenticateUser(String username, String pin, String role) throws SQLException {
         String sql = "SELECT * FROM users WHERE username = ? AND pin = ? AND role = ?";
         try (Connection conn = DBConnection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -18,7 +17,6 @@ public class UsersCRUD {
         }
     }
 
-    //Dodanie
     public void addUser(String username, String pin) throws SQLException{
         String sql = "INSERT INTO users (username, pin, balance, role) VALUES (?, ?, 0, 'user')";
         try (Connection conn = DBConnection.getConnection();
@@ -32,7 +30,6 @@ public class UsersCRUD {
         }
     }
 
-    //Saldo konta
     public void deposit(String username, double amount) throws SQLException{
         String sql = "UPDATE users SET balance = balance + ? WHERE username = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -46,7 +43,6 @@ public class UsersCRUD {
         }
     }
 
-    //Wypłata pieniędzy
     public void withDraw(String username, double amount) throws SQLException{
         String checkSQL = "SELECT balance FROM users WHERE username = ?";
         String updateSQL = "UPDATE users SET balance = balance - ? WHERE username = ?";
@@ -68,7 +64,6 @@ public class UsersCRUD {
         }
     }
 
-    //Sprawdzanie salda
     public void showBalance(String username) throws SQLException{
         String sql = "SElECT balance FROM users WHERE username = ?";
         try (Connection conn = DBConnection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -80,7 +75,6 @@ public class UsersCRUD {
         }
     }
 
-    //Zmiana PIN-u
     public void changePIN(String username, String newPin) throws SQLException{
         String sql = "UPDATE users SET pin = ? WHERE username = ?";
         try (Connection conn = DBConnection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -90,8 +84,4 @@ public class UsersCRUD {
             System.out.println("PIN zmieniono!");
         }
     }
-
-
-
 }
-
