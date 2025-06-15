@@ -7,12 +7,10 @@ enum Swiatlo {
 
     private String komunikat;
 
-    // Konstruktor enumu
     Swiatlo(String komunikat) {
         this.komunikat = komunikat;
     }
 
-    // Metoda zwracająca komunikat
     public String getKomunikat() {
         return komunikat;
     }

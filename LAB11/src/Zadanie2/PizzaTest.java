@@ -8,7 +8,6 @@ enum PizzaSize {
     private int srednica;  // w cm
     private double cena;   // cena w złotych
 
-    // Konstruktor
     PizzaSize(int srednica, double cena) {
         this.srednica = srednica;
         this.cena = cena;
